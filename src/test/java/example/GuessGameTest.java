@@ -50,21 +50,21 @@ public class GuessGameTest {
         assertEquals("2A1B",guess);
 
     }
-//    @Test
-//    public void should_return_0A4B_when_guess_game_given_4321(){
-//        //given
-//        GuessGame guessGame = new GuessGame();
-//        GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
-//        given(generateRandomNum.generateRandomNum()).willReturn("1234");
-//        String randomNum = generateRandomNum.generateRandomNum();
-//
-//        //when
-//        String guess = guessGame.guess("1234",randomNum);
-//
-//        //then
-//        assertEquals("4A0B",guess);
-//
-//    }
+    @Test
+    public void should_return_0A4B_when_guess_game_given_4321(){
+        //given
+        GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
+        given(generateRandomNum.generateRandomNum()).willReturn("1234");
+        String randomNum = generateRandomNum.generateRandomNum();
+        GuessGame guessGame = new GuessGame(randomNum);
+
+        //when
+        String guess = guessGame.guess("4321",randomNum);
+
+        //then
+        assertEquals("0A4B",guess);
+
+    }
 //    @Test
 //    public void should_return_0A2B_when_guess_game_given_2167(){
 //        //given
