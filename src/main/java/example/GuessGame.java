@@ -27,7 +27,6 @@ public class GuessGame implements GenerateRandomNum {
                 countB++;
             }
         }
-
         return countA + "A" + countB + "B";
     }
 
