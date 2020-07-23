@@ -56,5 +56,6 @@ public class GuessGame implements GenerateRandomNum {
         } else {
             return false;
         }
+
     }
 }
