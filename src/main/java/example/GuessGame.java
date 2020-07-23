@@ -5,10 +5,13 @@ import java.util.Random;
 
 public class GuessGame implements GenerateRandomNum {
 
-    private final String randomNum;
+    private  String randomNum;
 
     public GuessGame(String randomNum) {
         this.randomNum = randomNum;
+    }
+
+    public GuessGame() {
     }
 
     public String guess(String guess, String generateNum) {

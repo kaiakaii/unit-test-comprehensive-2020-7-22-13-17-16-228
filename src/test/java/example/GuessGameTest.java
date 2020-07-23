@@ -93,4 +93,15 @@ public class GuessGameTest {
         //then
         assertEquals("0A0B",guess);
     }
+    @Test
+    public void should_return__false_when_guess_game_given_123(){
+        //given
+        GuessGame guessGame = new GuessGame();
+
+        //when
+        boolean result = guessGame.isValid("123");
+
+        //then
+        assertEquals(false,result);
+    }
 }
