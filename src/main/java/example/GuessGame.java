@@ -1,5 +1,6 @@
 package example;
 
+import java.util.HashSet;
 import java.util.Random;
 
 public class GuessGame implements GenerateRandomNum {
@@ -42,7 +43,18 @@ public class GuessGame implements GenerateRandomNum {
     }
 
     public boolean isValid(String guess) {
-
-        return false;
+        if(guess.length() != 4){
+            return false;
+        }
+        String[] guessArray = guess.split("");
+        HashSet<String> hashSet = new HashSet<String>();
+        for (int i = 0; i < guessArray.length; i++) {
+            hashSet.add(guessArray[i]);
+        }
+        if (hashSet.size() == guessArray.length) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
