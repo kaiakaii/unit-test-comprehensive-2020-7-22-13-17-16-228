@@ -2,6 +2,7 @@ package example;
 
 import java.util.HashSet;
 import java.util.Random;
+import java.util.Scanner;
 
 public class GuessGame implements GenerateRandomNum {
 
@@ -15,7 +16,7 @@ public class GuessGame implements GenerateRandomNum {
     }
 
     public String guess(String guess, String generateNum) {
-        if (guess.equals(generateNum)) {
+        if (guess.equals(generateNum)) {//全对
             return "4A0B";
         }
         int countA = 0;
@@ -48,6 +49,11 @@ public class GuessGame implements GenerateRandomNum {
         if(guess.length() != 4){
             return false;
         }
+        for(int i=0;i<guess.length();i++){
+            if(guess.charAt(i)<48 || guess.charAt(i)>57){
+                return false;
+            }
+        }
         String[] guessArray = guess.split("");
         HashSet<String> hashSet = new HashSet<String>();
         for (int i = 0; i < guessArray.length; i++) {
@@ -59,5 +65,19 @@ public class GuessGame implements GenerateRandomNum {
             return false;
         }
 
+    }
+    public void startGame(){
+        String randomNum = this.generateRandomNum();
+        Scanner sc = new Scanner(System.in);
+        int times = 6;
+        while (times > 0){
+            String guessNum = sc.nextLine();
+            if(this.isValid(guessNum)){
+                this.guess(guessNum,randomNum);
+            }else{
+                System.out.println("Wrong Input，Input again");
+            }
+            times--;
+        }
     }
 }
