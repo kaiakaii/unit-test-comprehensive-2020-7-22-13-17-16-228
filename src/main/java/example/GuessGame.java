@@ -1,5 +1,7 @@
 package example;
 
+import java.util.Random;
+
 public class GuessGame implements GenerateRandomNum {
 
     private final String randomNum;
@@ -29,7 +31,14 @@ public class GuessGame implements GenerateRandomNum {
     }
 
     public String generateRandomNum() {
-        return "";
+        String charList = "0123456789";
+        String generateNum = "";
+        Random random = new Random();
+        for(int i=0;i<charList.length();i++)
+        {
+            generateNum += charList.charAt(Math.abs(random.nextInt())%charList.length());
+        }
+        return generateNum;
     }
 
     public boolean isValid(String guess) {
