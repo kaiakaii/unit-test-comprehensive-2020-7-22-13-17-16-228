@@ -13,7 +13,7 @@ public class GuessGameTest {
         GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
         given(generateRandomNum.generateRandomNum()).willReturn("1234");
         String randomNum = generateRandomNum.generateRandomNum();
-        GuessGame guessGame = new GuessGame(randomNum);
+        GuessGame guessGame = new GuessGame();
 
         //when
         String guess = guessGame.guess("1234",randomNum);
@@ -27,7 +27,7 @@ public class GuessGameTest {
         GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
         given(generateRandomNum.generateRandomNum()).willReturn("1234");
         String randomNum = generateRandomNum.generateRandomNum();
-        GuessGame guessGame = new GuessGame(randomNum);
+        GuessGame guessGame = new GuessGame();
 
         //when
         String guess = guessGame.guess("1243",randomNum);
@@ -41,7 +41,7 @@ public class GuessGameTest {
         GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
         given(generateRandomNum.generateRandomNum()).willReturn("1234");
         String randomNum = generateRandomNum.generateRandomNum();
-        GuessGame guessGame = new GuessGame(randomNum);
+        GuessGame guessGame = new GuessGame();
 
         //when
         String guess = guessGame.guess("1253",randomNum);
@@ -56,7 +56,7 @@ public class GuessGameTest {
         GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
         given(generateRandomNum.generateRandomNum()).willReturn("1234");
         String randomNum = generateRandomNum.generateRandomNum();
-        GuessGame guessGame = new GuessGame(randomNum);
+        GuessGame guessGame = new GuessGame();
 
         //when
         String guess = guessGame.guess("4321",randomNum);
@@ -71,7 +71,7 @@ public class GuessGameTest {
         GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
         given(generateRandomNum.generateRandomNum()).willReturn("1234");
         String randomNum = generateRandomNum.generateRandomNum();
-        GuessGame guessGame = new GuessGame(randomNum);
+        GuessGame guessGame = new GuessGame();
 
         //when
         String guess = guessGame.guess("2167",randomNum);
@@ -85,7 +85,7 @@ public class GuessGameTest {
         GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
         given(generateRandomNum.generateRandomNum()).willReturn("1234");
         String randomNum = generateRandomNum.generateRandomNum();
-        GuessGame guessGame = new GuessGame(randomNum);
+        GuessGame guessGame = new GuessGame();
 
         //when
         String guess = guessGame.guess("5678",randomNum);
@@ -96,10 +96,10 @@ public class GuessGameTest {
     @Test
     public void should_return__false_when_guess_game_given_123(){
         //given
-        GuessGame guessGame = new GuessGame();
+        Valid valid = new ValidImpl();
 
         //when
-        boolean result = guessGame.isValid("123");
+        boolean result = valid.isValidNum("123");
 
         //then
         assertEquals(false,result);
