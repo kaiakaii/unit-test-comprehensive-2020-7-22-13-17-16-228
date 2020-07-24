@@ -37,6 +37,7 @@ public class ValidTest {
         //when
         boolean result = valid.isValidNum("1125");
 
+
         //then
         assertEquals(false,result);
     }
