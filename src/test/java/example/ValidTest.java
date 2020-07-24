@@ -14,9 +14,10 @@ public class ValidTest {
         boolean result = valid.isValidNum("123");
 
         //then
-        assertEquals(false,result);
+        assertEquals(false, result);
 
     }
+
     @Test
     void should_false_when_isValid_given_abc() {
         //given
@@ -26,9 +27,10 @@ public class ValidTest {
         boolean result = valid.isValidNum("abc");
 
         //then
-        assertEquals(false,result);
+        assertEquals(false, result);
 
     }
+
     @Test
     void should_false_when_isValid_given_1125() {
         //given
@@ -39,6 +41,20 @@ public class ValidTest {
 
 
         //then
-        assertEquals(false,result);
+        assertEquals(false, result);
+
+    }
+
+    @Test
+    void should_false_when_isValid_given_1325() {
+        //given
+        Valid valid = new ValidImpl();
+
+        //when
+        boolean result = valid.isValidNum("1325");
+
+
+        //then
+        assertEquals(true, result);
     }
 }
