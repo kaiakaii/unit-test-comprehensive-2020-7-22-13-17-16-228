@@ -7,6 +7,7 @@ public class GuessGame {
     private GenerateRandomNum generateRandomNum = new GrnerateRandomImpl();
     private Valid valid = new ValidImpl();
 
+
     public GuessGame() {
     }
 
