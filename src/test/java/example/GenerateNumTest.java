@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.BDDMockito.given;
 
 public class GenerateNumTest {
@@ -17,6 +18,6 @@ public class GenerateNumTest {
         boolean actual = valid.isValidNum(generateRandomNum.generateRandomNum());
 
         //then
-        assertEquals(false,actual);
+        assertFalse(actual);
     }
 }

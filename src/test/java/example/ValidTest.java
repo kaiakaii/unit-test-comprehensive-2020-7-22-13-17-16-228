@@ -2,7 +2,7 @@ package example;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ValidTest {
     @Test
@@ -14,7 +14,7 @@ public class ValidTest {
         boolean result = valid.isValidNum("123");
 
         //then
-        assertEquals(false, result);
+        assertFalse(result);
 
     }
 
@@ -27,7 +27,7 @@ public class ValidTest {
         boolean result = valid.isValidNum("abc");
 
         //then
-        assertEquals(false, result);
+        assertFalse(result);
 
     }
 
@@ -41,7 +41,7 @@ public class ValidTest {
 
 
         //then
-        assertEquals(false, result);
+        assertFalse(result);
 
     }
 
@@ -55,6 +55,6 @@ public class ValidTest {
 
 
         //then
-        assertEquals(true, result);
+        assertTrue(result);
     }
 }
