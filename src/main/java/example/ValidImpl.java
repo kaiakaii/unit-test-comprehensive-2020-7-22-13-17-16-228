@@ -16,7 +16,7 @@ public class ValidImpl implements Valid {
             }
         }
         String[] guessArray = guess.split("");
-        HashSet<String> hashSet = new HashSet<String>(Arrays.asList(guessArray));
+        HashSet<String> hashSet = new HashSet<>(Arrays.asList(guessArray));
         return hashSet.size() == guessArray.length;
     }
 }

@@ -7,8 +7,6 @@ public class GuessGame {
     private GenerateRandomNum generateRandomNum = new GrnerateRandomImpl();
     private Valid valid = new ValidImpl();
 
-    public GuessGame() {
-    }
     public String guess(String guess,String generateNum) {
 
         if (guess.equals(generateNum)) {//全对
@@ -42,5 +40,6 @@ public class GuessGame {
             }
             times--;
         }
+        sc.close();
     }
 }
